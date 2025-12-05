@@ -1,6 +1,3 @@
-ingress:
-  host: wordpress.local
-
 wordpress:
   ingress:
     enabled: false

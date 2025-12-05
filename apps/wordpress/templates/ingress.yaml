@@ -4,8 +4,7 @@ metadata:
   name: wordpress
 spec:
   rules:
-    - host: {{ .Values.ingress.host }}
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -14,4 +13,3 @@ spec:
                 name: {{ .Release.Name }}-wordpress
                 port:
                   number: 8888
-
