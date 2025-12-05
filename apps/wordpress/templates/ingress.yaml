@@ -10,6 +10,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Release.Name }}-wordpress
+                name: {{ .Release.Name }}
                 port:
                   number: 80

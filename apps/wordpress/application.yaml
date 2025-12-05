@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/YOUR_REPO/kluster.git
+    repoURL: https://github.com/tomaszszewczyk/kluster.git
     path: apps/wordpress
     targetRevision: HEAD
   destination:
