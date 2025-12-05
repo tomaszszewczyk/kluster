@@ -13,5 +13,5 @@ spec:
               service:
                 name: {{ .Release.Name }}-wordpress
                 port:
-                  number: 80
+                  number: 8888
 
