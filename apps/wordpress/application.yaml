@@ -5,14 +5,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    chart: wordpress
-    targetRevision: "*"
-    helm:
-      values: |
-        ingress:
-          enabled: true
-          hostname: wordpress.local
+    repoURL: https://github.com/YOUR_REPO/kluster.git
+    path: apps/wordpress
+    targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
     namespace: wordpress
@@ -21,4 +16,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-
