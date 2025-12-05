@@ -6,7 +6,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /kibana
             pathType: Prefix
             backend:
               service:
@@ -22,7 +22,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /elasticsearch
             pathType: Prefix
             backend:
               service:
