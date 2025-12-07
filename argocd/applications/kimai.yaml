@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kimai
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://robjuz.github.io/helm-charts/
+    chart: kimai2
+    targetRevision: 4.1.0
+    helm:
+      values: |
+        kimaiAdminEmail: admin@example.com
+        kimaiAdminPassword: admin123
+        kimaiAppSecret: change_this_to_something_unique_123
+        service:
+          type: ClusterIP
+        persistence:
+          enabled: true
+          size: 5Gi
+        mariadb:
+          auth:
+            rootPassword: rootpassword
+            password: kimai
+          primary:
+            persistence:
+              enabled: true
+              size: 5Gi
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kimai
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
