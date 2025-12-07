@@ -13,21 +13,22 @@ spec:
     helm:
       values: |
         kimaiAdminEmail: admin@example.com
-        kimaiAdminPassword: admin123
+        kimaiAdminPassword: admin1234
         kimaiAppSecret: change_this_to_something_unique_123
         service:
           type: ClusterIP
         persistence:
           enabled: true
           size: 5Gi
-        mariadb:
-          enabled: false
         kimai:
           database:
             host: kimai-mariadb.kimai.svc.cluster.local
             name: kimai
             user: kimai
             password: kimai
+        mariadb:
+          image:
+            tag: 10.6
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
