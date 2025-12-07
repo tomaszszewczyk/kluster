@@ -21,15 +21,13 @@ spec:
           enabled: true
           size: 5Gi
         mariadb:
-          image:
-            tag: 10.6
-          auth:
-            rootPassword: rootpassword
+          enabled: false
+        kimai:
+          database:
+            host: kimai-mariadb.kimai.svc.cluster.local
+            name: kimai
+            user: kimai
             password: kimai
-          primary:
-            persistence:
-              enabled: true
-              size: 5Gi
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
