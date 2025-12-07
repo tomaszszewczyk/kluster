@@ -28,7 +28,7 @@ spec:
             password: kimai
         mariadb:
           image:
-            tag: 10.6
+            tag: latest
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
