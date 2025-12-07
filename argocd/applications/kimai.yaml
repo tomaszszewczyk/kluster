@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://robjuz.github.io/helm-charts/
     chart: kimai2
-    targetRevision: 4.1.0
+    targetRevision: 4.3.11
     helm:
       values: |
         kimaiAdminEmail: admin@example.com
