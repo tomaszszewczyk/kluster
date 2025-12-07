@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argocd
+  namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -23,7 +24,7 @@ spec:
             - --insecure
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: default
   syncPolicy:
     automated:
       selfHeal: true
