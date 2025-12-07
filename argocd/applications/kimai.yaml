@@ -21,6 +21,10 @@ spec:
           enabled: true
           size: 5Gi
         mariadb:
+          image:
+            registry: docker.io
+            repository: bitnami/mariadb
+            tag: 11.2
           auth:
             rootPassword: rootpassword
             password: kimai
