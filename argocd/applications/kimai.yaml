@@ -22,23 +22,13 @@ spec:
           size: 5Gi
         kimai:
           database:
-            host: kimai-mariadb.kimai.svc.cluster.local
+            host: mariadb.kimai.svc.cluster.local
             name: kimai
             user: kimai
             password: kimai
         mariadb:
-          image:
-            registry: docker.io
-            repository: mariadb
-            tag: "10.6.24"
-          primary:
-            podSecurityContext:
-              enabled: true
-              fsGroup: 999
-            containerSecurityContext:
-              enabled: true
-              runAsUser: 999
-              runAsNonRoot: true
+          enabled: false
+          tag: 10.6.24
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
