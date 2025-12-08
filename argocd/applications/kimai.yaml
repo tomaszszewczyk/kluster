@@ -28,7 +28,9 @@ spec:
             password: kimai
         mariadb:
           image:
-            tag: latest
+            registry: docker.io
+            repository: mariadb
+            tag: "10"
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
