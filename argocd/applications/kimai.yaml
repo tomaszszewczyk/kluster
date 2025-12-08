@@ -30,7 +30,15 @@ spec:
           image:
             registry: docker.io
             repository: mariadb
-            tag: "10"
+            tag: "10.6.24"
+          primary:
+            podSecurityContext:
+              enabled: true
+              fsGroup: 999
+            containerSecurityContext:
+              enabled: true
+              runAsUser: 999
+              runAsNonRoot: true
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
