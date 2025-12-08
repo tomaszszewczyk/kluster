@@ -28,8 +28,6 @@ spec:
             password: kimai
         mariadb:
           enabled: false
-          image:
-            tag: "10.6.24"
   destination:
     server: https://kubernetes.default.svc
     namespace: kimai
